@@ -3,15 +3,17 @@ import Head from "next/head"
 import HomePage from "../components/pages/home-page"
 import { getGroups } from "../services"
 
-export type GroupModel = {
-  id: number
-  campus: string
-  demographic: string
-  group_type: string
-  meeting_date: string
-  zip_code: number
-  additionalProp1: object
-}
+export type GroupModel =
+  | {
+      id: number
+      campus: string
+      demographic: string
+      group_type: string
+      meeting_date: string
+      zip_code: number
+      additionalProp1: object
+    }
+  | undefined
 
 export type HomePropType = {
   groups: GroupModel[]
